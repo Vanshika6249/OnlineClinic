@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<script>
+	/* function myFunction(){}
+	
+	function caal()
+	{
+		var pass1 = document.getElementById("pass");
+		var pass2 = document.getElementById("cpass");
+		if(pass1 == pass2)
+			{
+				document.getElementById("reg").disabled=false;
+			}
+		else
+			{
+			 alert("Password Should Match");
+			 document.getElementById("reg").disabled=true;
+			}
+	}
+	
+	function call1()
+	{
+		var pass1 = document.getElementById("pass").value;
+		var pass2 = document.getElementById("cpass").value;
+		if(pass1 == pass2)
+			{
+				document.getElementById("reg").disabled=false;
+			}
+		else
+			{
+			 alert("Password Should Match");
+			 document.getElementById("reg").disabled=true;
+			}
+	} */
+</script>
+</head>
+
+<body>
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+			<div class="card">
+					<div class="card-border text-center fs-4">Registration</div>
+					<div class="card-body">
+					
+						<form th:action="@{/createUser}" method="post">
+							<div class="mb-3">
+							<label>Name:</label>
+							<input type="text" name="name" class="form-control" required="required">
+							</div>
+							<div class="mb-3">
+							<label>Date Of Birth:</label>
+							<input type="date" name="dob" class="form-control" required>
+							</div>
+							<div class="mb-3">
+							<label>Gender:</label>
+							<input type="radio" name="gender" value="male">Male
+							<input type="radio" name="gender" value="female">Female
+							</div>
+							<div class="mb-3">
+							<label>Address:</label>
+							<textarea rows="2" cols="55" name="address" class="form-control" required></textarea>
+							</div> 
+							<!-- <div class="mb-3">
+							<label>Permanent Address:</label>
+							<textarea rows="2" cols="55" name="perad" class="form-control" required></textarea>
+							</div> -->
+							<div class="mb-3">
+							<label>Phone Number:</label>
+							<input type="text" name="phone" class="form-control" required>
+							</div>
+							<div class="mb-3">
+							<label>Email Id:</label>
+							<input type="email" name="email" class="form-control" required>
+							</div>
+							<div class="mb-3">
+							<label>Enter Password:</label>
+							<input type="password" name="password" class="form-control" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain atleast one number and one uppercase and lowercase letter and atleast 8 or more characters" id="pass" onfocus="caal()">
+							</div>
+							<!-- <div class="mb-3">
+							<label>User Type:</label>
+							<input type="radio" name="utype" value="administrator">Administrator
+							<input type="radio" name="utype" value="customer">Customer
+							</div> -->
+							<div class="mb-3">
+							<input type = "submit" class="btn btn-dark col-md-5 offset-md-1" onclick="myFunction()" value="Register" id="reg"></input>
+							<input type="reset" value="Clear" class="btn btn-dark col-md-5">
+							</div>
+							
+							<!--  <div class="mb-3">
+							
+							<th:block th:if="${session.msg}">
+							<p class="text-center fs-5 text-info">[[${session.msg}]]</p>
+							
+ 							 					
+							</th:block>
+							
+							</div> -->
+							 
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
